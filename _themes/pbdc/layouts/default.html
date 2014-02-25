@@ -24,7 +24,7 @@
 	<![endif]-->
 </head>
 
-<body>
+<body class="{{ if ! segment_1 }}home{{ else }}page{{ endif }}">
 	<!-- Header -->
 	<header>
 		<h1><a href="{{ homepage }}" rel="home">Phil Barbato</a></h1>
@@ -32,7 +32,7 @@
 	<!-- Navigation. transform into icons on home page move to off-canvas on interior -->
 	<nav class="main-nav">
 		<ul>
-			{{ nav from="/" include_content="true" }}<li class="nav-item nav-item-{{ segment_1 }}{{ if is_current || is_parent }} active{{ endif }}"><a href="{{ url }}"><img src="{{ theme_path }}img/icon-octo.svg" aria-hidden class="nav-icon nav-icon-blog" alt="Blog" />{{ title }}</a></li>{{ /nav }}
+			{{ nav from="/" include_content="true" }}<li class="nav-item nav-item-{{ title|lower|slugify }}{{ if is_current || is_parent }} active{{ endif }}"><a href="{{ url }}"><img src="{{ theme_path }}img/icon-octo.svg" aria-hidden class="nav-icon nav-icon-blog" alt="Blog" />{{ title }}</a></li>{{ /nav }}
 			
 			<!-- Maybe this isn't live at launch? -->
 			<!-- <li class="nav-blog"><a href="#"><img src="/assets/images/icon-octo.svg" aria-hidden class="nav-icon nav-icon-blog" alt="Blog" />Blog</a></li> -->

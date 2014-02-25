@@ -480,40 +480,55 @@ h1 a {
   text-decoration: none;
 }
 
-/* line 32, ../sass/screen.scss */
+/* line 31, ../sass/screen.scss */
 nav.main-nav ul {
-  align-items: flex-start;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
   list-style: none;
   margin: 0;
   padding: 0;
 }
-/* line 40, ../sass/screen.scss */
-nav.main-nav ul .nav-item {
-  flex: 1 1 auto;
-  margin: 12px 0 48px;
-  min-width: 120px;
-  position: relative;
-  text-align: center;
-}
-/* line 46, ../sass/screen.scss */
-nav.main-nav ul .nav-item a {
+/* line 35, ../sass/screen.scss */
+nav.main-nav ul a {
   color: #ec008c;
   font: normal 700 18px/24px "proxima-nova-soft-1", "proxima-nova-soft-2",sans-serif;
   padding-bottom: 2em;
   text-decoration: none;
   text-transform: uppercase;
 }
-/* line 53, ../sass/screen.scss */
-nav.main-nav ul .nav-item .nav-icon {
+/* line 42, ../sass/screen.scss */
+.home nav.main-nav ul {
+  align-items: flex-start;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+/* line 47, ../sass/screen.scss */
+.home nav.main-nav ul .nav-item {
+  flex: 1 1 auto;
+  margin: 12px 0 48px;
+  min-width: 120px;
+  position: relative;
+  text-align: center;
+}
+/* line 54, ../sass/screen.scss */
+.home nav.main-nav ul .nav-icon {
   display: block;
   margin: 0 auto;
   width: 120px;
 }
+/* line 67, ../sass/screen.scss */
+.page nav.main-nav ul .nav-icon {
+  display: inline-block;
+  height: 1em;
+  padding-right: .5em;
+  vertical-align: bottom;
+}
+/* line 73, ../sass/screen.scss */
+.page nav.main-nav ul a {
+  display: block;
+  padding: .5em;
+}
 
-/* line 62, ../sass/screen.scss */
+/* line 81, ../sass/screen.scss */
 .map {
   height: 24em;
   width: 100%;
