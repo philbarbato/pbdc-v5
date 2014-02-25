@@ -1,0 +1,13 @@
+type: number
+fields:
+  title:
+    instructions: These are instructions.
+
+  where:
+    display: Address
+    type: location
+
+  content:
+    display: More Info
+    required: false
+    type: markitup

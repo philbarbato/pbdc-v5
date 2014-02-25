@@ -8,6 +8,7 @@
 starting_latitude: 44.33
 starting_longitude: -68.21
 starting_zoom: 16
+auto_center: true
 
 # boundary zoom levels allowed in map
 min_zoom: 4
@@ -19,7 +20,7 @@ float_precision: 5
 # geolocation
 allow_geolocation: true
 geolocation_zoom: 17
-use_foursquare: true
+use_foursquare: false
 foursquare_client_id: CTRSTN2PTJZ2GIMA1EBIKCRUV4FFMK2DR5X23EIFJGIPM5A4
 foursquare_client_secret: PRQQA4IOT2S1DDUMFSZI4MDFCKWIRNEMZHJCXZNGCL30G3PC
 foursquare_radius: 200
@@ -39,7 +40,7 @@ mapping_service_style:
 mapping_service_attribution:
 
 # detects high-density displays and will double the tiles displayed
-detect_retina: false
+detect_retina: true
 
 # lets you provide a list of common locations for users to easily choose from
 # each location should be formatted like this:

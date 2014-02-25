@@ -48,6 +48,11 @@ fields:
       member: Member
       admin: Admin
     instructions: "Enabling roles gives users different abilities."
+  # member_image:
+  #   type: file
+  #   display: Member Image
+  #   allowed: [png, gif, jpg, jpeg]
+  #   destination: /assets/img/member_images/
   biography:
     type: markitup
     display: Biography

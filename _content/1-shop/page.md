@@ -1,8 +1,8 @@
 ---
 title: Shop
-_template: page
+_template: shop
 _fieldset: kitchen_sink
 ---
-Etsy Shop Link
+###[Shop on Etsy](www.etsy.com/shop/philbarbato)
 
-other stuffs
+###Find a Shop who Stocks our Stuff

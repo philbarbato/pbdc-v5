@@ -6,16 +6,27 @@
 @import "normalize";
 @import "vars";
 
-h1, h2, h3, h5, h5, h6{
-	font-family:"omnes-pro-1","omnes-pro-2",sans-serif;
+body{
+	font-family:"proxima-nova-soft-1", "proxima-nova-soft-2",sans-serif;
 	font-style:normal;
-	font-weight:600;
+	font-weight:500;
+}
+
+h1, h2, h3, h5, h5, h6{
+	font-family:"proxima-nova-soft-1", "proxima-nova-soft-2",sans-serif;
+	font-style:normal;
+	font-weight:700;
 }
 h1{
+	background:$magenta;
 	font-size:36px;
 	line-height:48px;
 	margin:0 0 .666666em;
 	padding:0 .25em;
+	a{
+		color:#fff;
+		text-decoration:none;
+	}
 }
 
 nav.main-nav ul{
@@ -34,7 +45,7 @@ nav.main-nav ul{
 		text-align:center;
 		a{
 			color:$magenta;
-			font:normal 600 18px/24px "omnes-pro-1","omnes-pro-2",sans-serif;
+			font:normal 700 18px/24px "proxima-nova-soft-1", "proxima-nova-soft-2",sans-serif;
 			padding-bottom:2em;
 			text-decoration:none;
 			text-transform:uppercase;
@@ -45,5 +56,11 @@ nav.main-nav ul{
 			width:120px;
 		}
 	}
+}
+
+// Map Stuffs
+.map{
+	height:24em;
+	width:100%;
 }
 

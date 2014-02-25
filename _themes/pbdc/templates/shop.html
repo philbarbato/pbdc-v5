@@ -1,0 +1,11 @@
+{{ content|widont }}
+
+{{ location:map_listing locate_with="where" open_popup="true" }}
+   {{ if no_results }}
+      <p>Sorry, couldn’t find a map for this.</p>
+   {{ else }}
+      <h4>{{ title }}</h4>
+   {{ endif }}
+{{ /location:map_listing }}
+
+{{ location:start_maps }}

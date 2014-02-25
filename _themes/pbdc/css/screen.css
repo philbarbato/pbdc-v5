@@ -453,21 +453,34 @@ table {
 }
 
 /* line 9, ../sass/screen.scss */
-h1, h2, h3, h5, h5, h6 {
-  font-family: "omnes-pro-1","omnes-pro-2",sans-serif;
+body {
+  font-family: "proxima-nova-soft-1", "proxima-nova-soft-2",sans-serif;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 500;
 }
 
-/* line 14, ../sass/screen.scss */
+/* line 15, ../sass/screen.scss */
+h1, h2, h3, h5, h5, h6 {
+  font-family: "proxima-nova-soft-1", "proxima-nova-soft-2",sans-serif;
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* line 20, ../sass/screen.scss */
 h1 {
+  background: #ec008c;
   font-size: 36px;
   line-height: 48px;
   margin: 0 0 .666666em;
   padding: 0 .25em;
 }
+/* line 26, ../sass/screen.scss */
+h1 a {
+  color: #fff;
+  text-decoration: none;
+}
 
-/* line 21, ../sass/screen.scss */
+/* line 32, ../sass/screen.scss */
 nav.main-nav ul {
   align-items: flex-start;
   display: flex;
@@ -477,7 +490,7 @@ nav.main-nav ul {
   margin: 0;
   padding: 0;
 }
-/* line 29, ../sass/screen.scss */
+/* line 40, ../sass/screen.scss */
 nav.main-nav ul .nav-item {
   flex: 1 1 auto;
   margin: 12px 0 48px;
@@ -485,17 +498,23 @@ nav.main-nav ul .nav-item {
   position: relative;
   text-align: center;
 }
-/* line 35, ../sass/screen.scss */
+/* line 46, ../sass/screen.scss */
 nav.main-nav ul .nav-item a {
   color: #ec008c;
-  font: normal 600 18px/24px "omnes-pro-1","omnes-pro-2",sans-serif;
+  font: normal 700 18px/24px "proxima-nova-soft-1", "proxima-nova-soft-2",sans-serif;
   padding-bottom: 2em;
   text-decoration: none;
   text-transform: uppercase;
 }
-/* line 42, ../sass/screen.scss */
+/* line 53, ../sass/screen.scss */
 nav.main-nav ul .nav-item .nav-icon {
   display: block;
   margin: 0 auto;
   width: 120px;
+}
+
+/* line 62, ../sass/screen.scss */
+.map {
+  height: 24em;
+  width: 100%;
 }
