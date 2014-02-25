@@ -1,0 +1,49 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "normalize";
+@import "vars";
+
+h1, h2, h3, h5, h5, h6{
+	font-family:"omnes-pro-1","omnes-pro-2",sans-serif;
+	font-style:normal;
+	font-weight:600;
+}
+h1{
+	font-size:36px;
+	line-height:48px;
+	margin:0 0 .666666em;
+	padding:0 .25em;
+}
+
+nav.main-nav ul{
+	align-items:flex-start;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+	list-style: none;
+	margin:0;
+	padding:0;
+	.nav-item{
+		flex:1 1 auto;
+		margin:12px 0 48px;
+		min-width:120px;
+		position:relative;
+		text-align:center;
+		a{
+			color:$magenta;
+			font:normal 600 18px/24px "omnes-pro-1","omnes-pro-2",sans-serif;
+			padding-bottom:2em;
+			text-decoration:none;
+			text-transform:uppercase;
+		}
+		.nav-icon{
+			display:block;
+			margin:0 auto;
+			width:120px;
+		}
+	}
+}
+

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+	<title>
+		{{ _site_name }}
+		{{ if segment_1 }}
+		– {{ title }}
+		{{ endif }}
+	</title>
+	<meta name="description" content="Phil Barbato">
+	<meta name="author" content="Phil Barbato">
+
+	<!-- styles -->
+	{{ theme:css src="screen" tag="true" }}
+
+	<script type="text/javascript" src="//use.typekit.net/lnm4vca.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	
+	<!--[if lt IE 10]>
+
+	<![endif]-->
+</head>
+
+<body>
+	<!-- Header -->
+	<header>
+		<h1><a href="{{ homepage }}" rel="home">Phil Barbato</a></h1>
+	</header>
+	<!-- Navigation. transform into icons on home page move to off-canvas on interior -->
+	<nav class="main-nav">
+		<ul>
+			{{ nav from="/" include_content="true" }}<li class="nav-item nav-item-{{ segment_1 }}{{ if is_current || is_parent }} active{{ endif }}"><a href="{{ url }}"><img src="{{ theme_path }}img/icon-octo.svg" aria-hidden class="nav-icon nav-icon-blog" alt="Blog" />{{ title }}</a></li>{{ /nav }}
+			
+			<!-- Maybe this isn't live at launch? -->
+			<!-- <li class="nav-blog"><a href="#"><img src="/assets/images/icon-octo.svg" aria-hidden class="nav-icon nav-icon-blog" alt="Blog" />Blog</a></li> -->
+		</ul>
+	</nav>
+	{{ layout_content }}
+	<footer class="main-footer">
+		<!-- Social links, redundant nav, etc. -->
+		<nav class="social-nav">
+			<ul>
+				<li class="nav-item nav-item-tumblr"><a href="http://philbarbato.tumblr.com/">Tumblr</a></li>
+				<li class="nav-item nav-item-twitter"><a href="https://twitter.com/philbarbato">Twitter</a></li>
+				<li class="nav-item nav-item-facebook"><a href="https://www.facebook.com/phil.barbato.loves.you">Facebook</a></li>
+				<li class="nav-item nav-item-etsy"><a href="https://www.etsy.com/shop/philbarbato">Etsy</a></li>
+			</ul>
+		</nav>
+	</footer>
+	
+	{{ location:start_maps smart_include="true" }}
+	
+	<script src="/assets/javascripts/scripts.js"></script>
+</body>
+</html>
