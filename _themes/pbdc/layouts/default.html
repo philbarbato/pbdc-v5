@@ -26,11 +26,13 @@
 
 <body class="{{ if ! segment_1 }}home{{ else }}page{{ endif }}">
 	<!-- Header -->
-	<header>
+	<header class="main-header">
 		<h1><a href="{{ homepage }}" rel="home">Phil Barbato</a></h1>
 	</header>
 	<!-- Navigation. transform into icons on home page move to off-canvas on interior -->
+	{{ if segment_1 }}<input type="checkbox" class="main-nav-check" id="main-nav-check" />{{ endif }}
 	<nav class="main-nav">
+		{{ if segment_1 }}<label for="main-nav-check" class="toggle-menu">☰</label>{{ endif }}
 		<ul>
 			{{ nav from="/" include_content="true" }}<li class="nav-item nav-item-{{ title|lower|slugify }}{{ if is_current || is_parent }} active{{ endif }}"><a href="{{ url }}"><img src="{{ theme_path }}img/icon-octo.svg" aria-hidden class="nav-icon nav-icon-blog" alt="Blog" />{{ title }}</a></li>{{ /nav }}
 			

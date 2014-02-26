@@ -6,10 +6,15 @@
 @import "normalize";
 @import "vars";
 
+html,body{
+	min-height:100%;
+}
+
 body{
 	font-family:"proxima-nova-soft-1", "proxima-nova-soft-2",sans-serif;
 	font-style:normal;
 	font-weight:500;
+	position:relative;
 }
 
 h1, h2, h3, h5, h5, h6{
@@ -17,64 +22,109 @@ h1, h2, h3, h5, h5, h6{
 	font-style:normal;
 	font-weight:700;
 }
-h1{
+
+// Main Header
+.main-header{
 	background:$magenta;
-	font-size:36px;
-	line-height:48px;
-	margin:0 0 .666666em;
-	padding:0 .25em;
-	a{
-		color:#fff;
-		text-decoration:none;
+	h1{
+		font-size:36px;
+		line-height:48px;
+		margin:0 0 .666666em;
+		padding:0 .25em;
+		a{
+			color:#fff;
+			text-decoration:none;
+		}
 	}
 }
-nav.main-nav ul{
-	list-style: none;
-	margin:0;
-	padding:0;
-	a{
-		color:$magenta;
-		font:normal 700 18px/24px "proxima-nova-soft-1", "proxima-nova-soft-2",sans-serif;
-		padding-bottom:2em;
-		text-decoration:none;
-		text-transform:uppercase;
-	}
+
+//Main Nav
+.main-nav-check {
+  display: none;
+}
+.main-nav{
+	ul{
+		list-style: none;
+		margin:0;
+		padding:0;
+		a{
+			color:$magenta;
+			font:normal 700 18px/24px "proxima-nova-soft-1", "proxima-nova-soft-2",sans-serif;
+			padding-bottom:2em;
+			text-decoration:none;
+			text-transform:uppercase;
+		}
+	}	
 	.home &{
-		align-items:flex-start;
-		display: flex;
-		flex-flow: row wrap;
-		justify-content: space-around;
-		.nav-item{
-			flex:1 1 auto;
-			margin:12px 0 48px;
-			min-width:120px;
-			position:relative;
-			text-align:center;
+		ul{
+			align-items:flex-start;
+			display: flex;
+			flex-flow: row wrap;
+			justify-content: space-around;
+			.nav-item{
+				flex:1 1 auto;
+				margin:12px 0 48px;
+				min-width:120px;
+				position:relative;
+				text-align:center;
+			}
+			.nav-icon{
+				display:block;
+				margin:0 auto;
+				width:120px;
+			}
+			a{
+				&:hover, &:focus {
+			      color:$darkblue;
+			    }
+			}
 		}
-		.nav-icon{
-			display:block;
-			margin:0 auto;
-			width:120px;
-		}
-//		a{
-//			color:$magenta;
-//		}
 	}
 	.page &{
-//		.nav-item{
-//			
-//		}
-		.nav-icon{
-			display:inline-block;
-			height:1em;
-			padding-right:.5em;
-			vertical-align:bottom;
-		}
-		a{
-			display:block;
-			padding:.5em;
+		background: $magenta;
+		border-left:3px solid #fff;
+		height: 100%;
+		max-width:90%;
+//		overflow: hidden;
+		position: fixed;
+		right:-200px;
+		top: 0;
+//		transform:translate3d(0,0,0);
+		transition: all 0.3s ease;
+		width:200px;
+		z-index:1001;
+		.toggle-menu {
+			color: white;
+			cursor: pointer;
+			font-size: 36px;
+			position: absolute;
+			left:-1.25em;
+			top:0;
+		}	
+		ul{
+			.nav-item{
+				border-bottom:1px solid #fff;
+			}
+			.nav-icon{
+				display:inline-block;
+				height:1em;
+				padding-right:.5em;
+				vertical-align:bottom;
+			}
+			a{
+				color:#fff;
+				display:block;
+				padding:.5em;
+				&:hover, &:focus {
+			      background:lighten($magenta,25%);
+			    }
+			}
 		}
 	}
+}
+.page #main-nav-check:checked + .main-nav {
+	right:0;
+//	transform:translate3d(-200px,0,0);
 }
 
 // Map Stuffs
