@@ -454,10 +454,12 @@ table {
 
 /* line 9, ../sass/screen.scss */
 html, body {
+  margin: 0;
   min-height: 100%;
+  padding: 0;
 }
 
-/* line 13, ../sass/screen.scss */
+/* line 15, ../sass/screen.scss */
 body {
   font-family: "proxima-nova-soft-1", "proxima-nova-soft-2",sans-serif;
   font-style: normal;
@@ -465,42 +467,42 @@ body {
   position: relative;
 }
 
-/* line 20, ../sass/screen.scss */
+/* line 22, ../sass/screen.scss */
 h1, h2, h3, h5, h5, h6 {
   font-family: "proxima-nova-soft-1", "proxima-nova-soft-2",sans-serif;
   font-style: normal;
   font-weight: 700;
 }
 
-/* line 27, ../sass/screen.scss */
+/* line 29, ../sass/screen.scss */
 .main-header {
   background: #ec008c;
 }
-/* line 29, ../sass/screen.scss */
+/* line 31, ../sass/screen.scss */
 .main-header h1 {
   font-size: 36px;
   line-height: 48px;
   margin: 0 0 .666666em;
   padding: 0 .25em;
 }
-/* line 34, ../sass/screen.scss */
+/* line 36, ../sass/screen.scss */
 .main-header h1 a {
   color: #fff;
   text-decoration: none;
 }
 
-/* line 42, ../sass/screen.scss */
+/* line 44, ../sass/screen.scss */
 .main-nav-check {
   display: none;
 }
 
-/* line 46, ../sass/screen.scss */
+/* line 48, ../sass/screen.scss */
 .main-nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-/* line 50, ../sass/screen.scss */
+/* line 52, ../sass/screen.scss */
 .main-nav ul a {
   color: #ec008c;
   font: normal 700 18px/24px "proxima-nova-soft-1", "proxima-nova-soft-2",sans-serif;
@@ -508,32 +510,37 @@ h1, h2, h3, h5, h5, h6 {
   text-decoration: none;
   text-transform: uppercase;
 }
-/* line 59, ../sass/screen.scss */
+/* line 61, ../sass/screen.scss */
 .home .main-nav ul {
   align-items: flex-start;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
+  -webkit-align-items: flex-start;
+  display: -webkit-flex;
+  -webkit-flex-flow: row wrap;
+  -webkit-justify-content: space-around;
 }
-/* line 64, ../sass/screen.scss */
+/* line 70, ../sass/screen.scss */
 .home .main-nav ul .nav-item {
   flex: 1 1 auto;
+  -webkit-flex: 1 1 auto;
   margin: 12px 0 48px;
   min-width: 120px;
   position: relative;
   text-align: center;
 }
-/* line 71, ../sass/screen.scss */
+/* line 78, ../sass/screen.scss */
 .home .main-nav ul .nav-icon {
   display: block;
   margin: 0 auto;
   width: 120px;
 }
-/* line 77, ../sass/screen.scss */
+/* line 84, ../sass/screen.scss */
 .home .main-nav ul a:hover, .home .main-nav ul a:focus {
   color: #2e3192;
 }
-/* line 83, ../sass/screen.scss */
+/* line 90, ../sass/screen.scss */
 .page .main-nav {
   background: #ec008c;
   border-left: 3px solid #fff;
@@ -546,7 +553,7 @@ h1, h2, h3, h5, h5, h6 {
   width: 200px;
   z-index: 1001;
 }
-/* line 96, ../sass/screen.scss */
+/* line 103, ../sass/screen.scss */
 .page .main-nav .toggle-menu {
   color: white;
   cursor: pointer;
@@ -555,34 +562,34 @@ h1, h2, h3, h5, h5, h6 {
   left: -1.25em;
   top: 0;
 }
-/* line 105, ../sass/screen.scss */
+/* line 112, ../sass/screen.scss */
 .page .main-nav ul .nav-item {
   border-bottom: 1px solid #fff;
 }
-/* line 108, ../sass/screen.scss */
+/* line 115, ../sass/screen.scss */
 .page .main-nav ul .nav-icon {
   display: inline-block;
   height: 1em;
   padding-right: .5em;
   vertical-align: bottom;
 }
-/* line 114, ../sass/screen.scss */
+/* line 121, ../sass/screen.scss */
 .page .main-nav ul a {
   color: #fff;
   display: block;
   padding: .5em;
 }
-/* line 118, ../sass/screen.scss */
+/* line 125, ../sass/screen.scss */
 .page .main-nav ul a:hover, .page .main-nav ul a:focus {
   background: #ff6dc3;
 }
 
-/* line 125, ../sass/screen.scss */
+/* line 132, ../sass/screen.scss */
 .page #main-nav-check:checked + .main-nav {
   right: 0;
 }
 
-/* line 131, ../sass/screen.scss */
+/* line 138, ../sass/screen.scss */
 .map {
   height: 24em;
   width: 100%;
