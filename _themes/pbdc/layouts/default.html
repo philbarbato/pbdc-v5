@@ -3,7 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	<title>
 		{{ _site_name }}
 		{{ if segment_1 }}
@@ -25,36 +26,48 @@
 </head>
 
 <body class="{{ if ! segment_1 }}home{{ else }}page{{ endif }}">
+<div class="wrapper page-wrapper">
+	
 	<!-- Header -->
 	<header class="main-header">
 		<h1><a href="{{ homepage }}" rel="home">Phil Barbato</a></h1>
 	</header>
+	
 	<!-- Navigation. transform into icons on home page move to off-canvas on interior -->
 	{{ if segment_1 }}<input type="checkbox" class="main-nav-check" id="main-nav-check" />{{ endif }}
 	<nav class="main-nav">
 		{{ if segment_1 }}<label for="main-nav-check" class="toggle-menu">☰</label>{{ endif }}
 		<ul>
-			{{ nav from="/" include_content="true" }}<li class="nav-item nav-item-{{ title|lower|slugify }}{{ if is_current || is_parent }} active{{ endif }}"><a href="{{ url }}"><img src="{{ theme_path }}img/icon-octo.svg" aria-hidden class="nav-icon nav-icon-blog" alt="Blog" />{{ title }}</a></li>{{ /nav }}
+			{{ nav from="/" include_content="true" }}
+			<li class="nav-item nav-item-{{ title|lower|slugify }}{{ if is_current || is_parent }} active{{ endif }}"><a href="{{ url }}"> {{ theme:partial src="icon-{{ title|lower|slugify }}" }}{{ title }}</a></li>
+			{{ /nav }}
 			
 			<!-- Maybe this isn't live at launch? -->
 			<!-- <li class="nav-blog"><a href="#"><img src="/assets/images/icon-octo.svg" aria-hidden class="nav-icon nav-icon-blog" alt="Blog" />Blog</a></li> -->
 		</ul>
 	</nav>
-	{{ layout_content }}
+	
+	<!-- Main Content Area -->
+	<div class="content">
+		{{ layout_content }}		
+	</div>
+	
+	<!-- Page Footer -->
 	<footer class="main-footer">
 		<!-- Social links, redundant nav, etc. -->
 		<nav class="social-nav">
 			<ul>
-				<li class="nav-item nav-item-tumblr"><a href="http://philbarbato.tumblr.com/">Tumblr</a></li>
-				<li class="nav-item nav-item-twitter"><a href="https://twitter.com/philbarbato">Twitter</a></li>
-				<li class="nav-item nav-item-facebook"><a href="https://www.facebook.com/phil.barbato.loves.you">Facebook</a></li>
-				<li class="nav-item nav-item-etsy"><a href="https://www.etsy.com/shop/philbarbato">Etsy</a></li>
+				<li class="nav-item nav-item-tumblr"><a href="http://philbarbato.tumblr.com/"><span class="social-icon-tumblr">t</span></a></li>
+				<li class="nav-item nav-item-twitter"><a href="https://twitter.com/philbarbato"><span class="social-icon-twitter">T</span></a></li>
+				<li class="nav-item nav-item-facebook"><a href="https://www.facebook.com/phil.barbato.loves.you"><span class="social-icon-facebook">F</span></a></li>
+				<li class="nav-item nav-item-etsy"><a href="https://www.etsy.com/shop/philbarbato"><span class="social-icon-etsy">E</span></a></li>
 			</ul>
 		</nav>
 	</footer>
 	
+</div>
+
 	{{ location:start_maps smart_include="true" }}
-	
-	<script src="/assets/javascripts/scripts.js"></script>
+	{{#{{ theme:js src="scripts" }}#}}
 </body>
 </html>

@@ -1,21 +1,43 @@
-/* Welcome to Compass.
- * In this file you should write your main styles. (or centralize your imports)
- * Import this file using the following HTML or equivalent:
- * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-
 @import "normalize";
 @import "vars";
 
-html,body{
-	margin:0;
-	min-height:100%;
-	padding:0;
+// Social Icons
+@font-face {
+	font-family: 'pbdc-social-icons';
+	src:url('../fonts/pbdc-social-icons.eot?-gkuloy');
+	src:url('../fonts/pbdc-social-icons.eot?#iefix-gkuloy') format('embedded-opentype'),
+		url('../fonts/pbdc-social-icons.woff?-gkuloy') format('woff'),
+		url('../fonts/pbdc-social-icons.ttf?-gkuloy') format('truetype'),
+		url('../fonts/pbdc-social-icons.svg?-gkuloy#pbdc-social-icons') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@keyframes CLOUD-MOVE {
+	from {
+		background-position: 5% 5%
+	}
+	to { 
+		background-position: -1200% 600%
+	}
+}
+
+html{
+	background:lighten($cyan,48%) url('../img/cloud-bg.svg') repeat fixed center 0;
+	background-size:600px auto;
+	height:100%;
+	
+	animation-name: CLOUD-MOVE;
+	animation-duration: 100s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;	
 }
 
 body{
 	font-family:"proxima-nova-soft-1", "proxima-nova-soft-2",sans-serif;
 	font-style:normal;
 	font-weight:500;
+	height:100%;
 	position:relative;
 }
 
@@ -25,14 +47,30 @@ h1, h2, h3, h5, h5, h6{
 	font-weight:700;
 }
 
+a{
+	color:$darkblue;
+}
+
+// Page Wrapper
+.page-wrapper{
+	display: flex;
+	flex-direction:column;
+	min-height:100%;
+	overflow:hidden;
+	position:relative;
+}
+
 // Main Header
 .main-header{
 	background:$magenta;
+	font-size:36px;
+	padding:0 10px;
+	height:1.25em;
 	h1{
 		font-size:36px;
-		line-height:48px;
-		margin:0 0 .666666em;
-		padding:0 .25em;
+		line-height:1.25em;
+		margin:0 auto .666666em;
+		max-width:$max-width;
 		a{
 			color:#fff;
 			text-decoration:none;
@@ -52,48 +90,60 @@ h1, h2, h3, h5, h5, h6{
 		a{
 			color:$magenta;
 			font:normal 700 18px/24px "proxima-nova-soft-1", "proxima-nova-soft-2",sans-serif;
-			padding-bottom:2em;
 			text-decoration:none;
 			text-transform:uppercase;
+		}
+		svg{
+			.icon-part{
+				fill:#fff;
+			}
 		}
 	}	
 	.home &{
 		ul{
-			align-items:flex-start;
+			align-content: space-around;
+			align-items:center;
 			display: flex;
 			flex-flow: row wrap;
 			justify-content: space-around;
-			-webkit-align-items:flex-start;
-			display: -webkit-flex;
-			-webkit-flex-flow: row wrap;
-			-webkit-justify-content: space-around;
+			padding-top:12px;
 			.nav-item{
 				flex:1 1 auto;
-				-webkit-flex:1 1 auto;
-				margin:12px 0 48px;
-				min-width:120px;
+				margin:12px 0;
+				width:96px;
 				position:relative;
 				text-align:center;
 			}
-			.nav-icon{
+			a{
+				display:block;
+				&:hover, &:focus {
+			    	color:$darkblue;
+					
+					.fill{
+						fill:$darkblue;
+					}
+			    }
+			}
+			svg{
 				display:block;
 				margin:0 auto;
-				width:120px;
-			}
-			a{
-				&:hover, &:focus {
-			      color:$darkblue;
-			    }
+				max-height:96px;
+				.fill{
+					fill:$magenta;
+				}
+				.line{
+					fill:$darkblue;
+				}
 			}
 		}
 	}
 	.page &{
 		background: $magenta;
 		border-left:3px solid #fff;
-		height: 100%;
+		min-height: 100%;
 		max-width:90%;
 //		overflow: hidden;
-		position: fixed;
+		position: absolute;
 		right:-200px;
 		top: 0;
 //		transform:translate3d(0,0,0);
@@ -101,22 +151,32 @@ h1, h2, h3, h5, h5, h6{
 		width:200px;
 		z-index:1001;
 		.toggle-menu {
+			background:$magenta;
+			border-right:3px solid #fff;
 			color: white;
 			cursor: pointer;
 			font-size: 36px;
+			line-height:1.25em;
 			position: absolute;
 			left:-1.25em;
+			text-align:center;
 			top:0;
+			width:1.25em;
 		}	
 		ul{
 			.nav-item{
 				border-bottom:1px solid #fff;
 			}
-			.nav-icon{
+			svg{
 				display:inline-block;
-				height:1em;
-				padding-right:.5em;
+				height:1.25em;
+				margin-right:.5em;
 				vertical-align:bottom;
+				width:1.25em;
+				
+				.icon-part{
+					fill:lighten($magenta,20%);
+				}
 			}
 			a{
 				color:#fff;
@@ -134,9 +194,61 @@ h1, h2, h3, h5, h5, h6{
 //	transform:translate3d(-200px,0,0);
 }
 
+// Content
+.content{
+	flex:1;
+	margin:0 auto;
+	max-width:$max-width;
+	padding:0 10px;
+	width:100%;
+}
+
 // Map Stuffs
 .map{
 	height:24em;
 	width:100%;
 }
+
+// Footer
+footer{
+	background:$magenta;
+	padding:.666666em 0;
+	.social-nav{
+		margin:0 auto;
+		max-width:$max-width;
+		padding:0 10px;		
+		ul{
+			display: flex;
+			flex-flow:row wrap;
+			justify-content:center;
+			list-style:none;
+			padding:0;
+			li{
+				flex:1 1 auto;
+				max-width:100px;
+				min-width:50px;
+				text-align:center;
+				a{
+					color:#fff;
+					text-decoration:none;
+				}
+			}
+		}
+	}
+}
+[class^="social-icon-"], [class*=" social-icon-"] {
+	font-family: 'pbdc-social-icons';
+	speak: none;
+	font-size:36px;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
 
