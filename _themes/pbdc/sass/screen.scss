@@ -12,13 +12,21 @@
 	font-weight: normal;
 	font-style: normal;
 }
-
+//animations
 @keyframes CLOUD-MOVE {
 	from {
 		background-position: 5% 5%
 	}
 	to { 
 		background-position: -1200% 600%
+	}
+}
+@keyframes two-frames{
+	0%{
+		opacity:0;
+	}
+	50%{
+		opacity:1;
 	}
 }
 
@@ -93,11 +101,6 @@ a{
 			text-decoration:none;
 			text-transform:uppercase;
 		}
-		svg{
-			.icon-part{
-				fill:#fff;
-			}
-		}
 	}	
 	.home &{
 		ul{
@@ -110,7 +113,7 @@ a{
 			.nav-item{
 				flex:1 1 auto;
 				margin:12px 0;
-				width:96px;
+				width:120px;
 				position:relative;
 				text-align:center;
 			}
@@ -118,21 +121,44 @@ a{
 				display:block;
 				&:hover, &:focus {
 			    	color:$darkblue;
-					
-					.fill{
-						fill:$darkblue;
+					svg{
+						transform:rotateZ(-3deg);
+					}
+					.hide-on-hover{
+						visibility:hidden;
+					}
+					.animate-me{
+						visibility:visible;
+					}
+					.frame-1{
+						animation: two-frames 300ms steps(1) infinite;
+					}
+					.frame-2{
+						animation: two-frames 300ms steps(1) 150ms infinite;
 					}
 			    }
 			}
 			svg{
 				display:block;
 				margin:0 auto;
-				max-height:96px;
+				max-height:120px;
+				.icon-part{
+					fill:#fff;
+				}					
 				.fill{
 					fill:$magenta;
 				}
+				.fill.lighter{
+					fill:tint($magenta,60%);
+				}
+				.fill.darker{
+					fill:mix($magenta,$cyan,66%);
+				}
 				.line{
 					fill:$darkblue;
+				}
+				.animate-me{
+					visibility:hidden;
 				}
 			}
 		}
