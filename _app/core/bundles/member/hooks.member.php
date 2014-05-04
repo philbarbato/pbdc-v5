@@ -24,7 +24,7 @@ class Hooks_member extends Hooks
         // test for a valid login
         if (Auth::login($username, $password, $remember)) {
             $this->flash->set('login_success', 'Member logged in.');
-            URL::redirect(URL::assemble(Config::getSiteRoot(), $return));
+            URL::redirect($return);
         } else {
             $this->flash->set('login_error', 'Invalid login.');
             $this->flash->set('old_values', $_POST);
@@ -57,7 +57,8 @@ class Hooks_member extends Hooks
         $site_root   = Config::getSiteRoot();
         $referrer    = Request::getReferrer();
         $token       = filter_input(INPUT_POST, 'token', FILTER_SANITIZE_STRING);
-        $home        = $this->fetchConfig('member_home', $site_root, null, false, false);
+        $return      = filter_input(INPUT_POST, 'return', FILTER_SANITIZE_STRING);
+        $return        = ($return) ? $return : $this->fetchConfig('member_home', $site_root, null, false, false);
         $auto_login  = (bool) filter_input(INPUT_POST, 'auto_login', FILTER_SANITIZE_NUMBER_INT);
 
         // validate form token
@@ -68,7 +69,7 @@ class Hooks_member extends Hooks
 
         // is user logged in?
         if (Auth::isLoggedIn()) {
-            URL::redirect($home);
+            URL::redirect($return);
         }
         
         // get configurations
@@ -180,7 +181,7 @@ class Hooks_member extends Hooks
             $this->runHook('registration_complete', null, null, $member);
             
             // redirect to member home
-            URL::redirect($home);
+            URL::redirect($return);
         }
     }
 

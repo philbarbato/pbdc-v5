@@ -50,6 +50,9 @@ class Cache
                 'site_root' => '',
                 'site_url'  => '',
                 'timezone'  => '',
+                'date_format' => '',
+                'time_format' => '',
+                'content_type' => '',
                 'taxonomy'  => '',
                 'taxonomy_case_sensitive' => '',
                 'taxonomy_force_lowercase' => '',
@@ -64,6 +67,9 @@ class Cache
             'site_root' => Config::getSiteRoot(),
             'site_url'  => Config::getSiteURL(),
             'timezone'  => Config::get('timezone'),
+            'date_format' => Config::get('date_format'),
+            'time_format' => Config::get('time_format'),
+            'content_type' => Config::get('content_type'),
             'taxonomy'  => Config::getTaxonomies(),
             'taxonomy_case_sensitive' => Config::getTaxonomyCaseSensitive(),
             'taxonomy_force_lowercase' => Config::getTaxonomyForceLowercase(),
@@ -345,12 +351,6 @@ class Cache
                 foreach ($pages as $file => $item) {
                     // set up base variables
                     $parent = null;
-                    $has_children = false;
-                    $children = array(
-                        'live' => array(),
-                        'draft' => array(),
-                        'hidden' => array()
-                    );
                     
                     $order_key = ltrim($item['path'], $home);
                     $sub_order_key = $item['data']['_order_key'];
@@ -383,8 +383,6 @@ class Cache
                     
                     $structure[$item['url']] = array(
                         'parent' => $parent,
-                        'has_children' => $has_children,
-                        'children' => $children,
                         'is_entry' => $item['data']['_is_entry'],
                         'is_page' => $item['data']['_is_page'],
                         'is_hidden' => $item['data']['_is_hidden'],
