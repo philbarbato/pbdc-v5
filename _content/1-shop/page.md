@@ -5,4 +5,4 @@ _fieldset: kitchen_sink
 ---
 ###[Shop on Etsy](www.etsy.com/shop/philbarbato)
 
-###Find a Shop who Stocks our Stuff
+###Find a Shop who stocks our Stuff

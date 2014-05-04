@@ -39,7 +39,7 @@
 		{{ if segment_1 }}<label for="main-nav-check" class="toggle-menu">☰</label>{{ endif }}
 		<ul>
 			{{ nav from="/" include_content="true" }}
-			<li class="nav-item nav-item-{{ title|lower|slugify }}{{ if is_current || is_parent }} active{{ endif }}"><a href="{{ url }}"> {{ theme:partial src="icon-{{ title|lower|slugify }}" }}{{ title }}</a></li>
+			<li class="nav-item nav-item-{{ title|lower|slugify }}{{ if is_current || is_parent }} active{{ endif }}"><a href="{{ url }}"> {{if !segment_1}}{{ theme:partial src="icon-{{ title|lower|slugify }}" }}{{endif}}{{ title }}</a></li>
 			{{ /nav }}
 			
 			<!-- Maybe this isn't live at launch? -->
@@ -49,7 +49,7 @@
 	
 	<!-- Main Content Area -->
 	<div class="content">
-		{{ layout_content }}		
+		{{ layout_content }}
 	</div>
 	
 	<!-- Page Footer -->

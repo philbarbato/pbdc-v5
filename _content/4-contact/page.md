@@ -1,6 +1,5 @@
 ---
 title: Contact
 _template: page
-_fieldset: kitchen_sink
+_fieldset: page
 ---
-Wufoo form here

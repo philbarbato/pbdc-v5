@@ -227,6 +227,11 @@ a{
 	max-width:$max-width;
 	padding:0 10px;
 	width:100%;
+	
+	div[id*="wufoo"]{
+		border:5px solid lighten($cyan,40%);
+		border-radius:18px;
+	}
 }
 
 // Map Stuffs
@@ -257,6 +262,9 @@ footer{
 				a{
 					color:#fff;
 					text-decoration:none;
+					&:hover, &:focus{
+						color:$yellow;
+					}
 				}
 			}
 		}

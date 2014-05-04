@@ -1,46 +1,28 @@
-<div class="row">
-	<div class="eight columns">
-		<div class="article">
-			{{ theme:partial src="breadcrumbs" }}
-			<h2>{{ title|smartypants|widont }}</h2>
+<h2>{{ title|smartypants|widont }}</h2>
 
-			{{ content|widont }}
+{{ content|widont }}
+
+{{ if segment_1 == "contact" }}
+	<div id="wufoo-z9861ja0ugktaw">
+	Fill out my <a href="https://philbarbato.wufoo.com/forms/z9861ja0ugktaw">online form</a>.
+	</div>
+	<div id="wuf-adv" style="font-family:inherit;font-size: small;color:#a7a7a7;text-align:center;display:block;">HTML Forms powered by <a href="http://www.wufoo.com">Wufoo</a>.</div>
+	<script type="text/javascript">var z9861ja0ugktaw;(function(d, t) {
+	var s = d.createElement(t), options = {
+	'userName':'philbarbato',
+	'formHash':'z9861ja0ugktaw',
+	'autoResize':true,
+	'height':'514',
+	'async':true,
+	'host':'wufoo.com',
+	'header':'show',
+	'ssl':true};
+	s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'wufoo.com/scripts/embed/form.js';
+	s.onload = s.onreadystatechange = function() {
+	var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
+	try { z9861ja0ugktaw = new WufooForm();z9861ja0ugktaw.initialize(options);z9861ja0ugktaw.display(); } catch (e) {}};
+	var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
+	})(document, 'script');</script>
+{{endif}}		
+
 			
-			{{ if _folder != '/' }}
-				{{ pages:previous folder="{_folder}" }}
-					{{ unless no_results }}
-						<div class="pagination">
-							<a href="{{ url }}" class="older">
-								<small>Previously</small><br>
-								{{ title|widont }}
-							</a>
-							
-						{{ if !has_next }}
-							</div>
-						{{ endif }}
-					{{ endif }}
-							
-				{{ /pages:previous }}
-				
-				{{ pages:next folder="{_folder}" }}
-					{{ unless no_results }}
-						{{ if !has_previous }}
-							<div class="pagination">
-						{{ endif }}
-							
-						<a href="{{ url }}" class="newer">
-							<small>Next Up</small><br>
-							{{ title|widont }}
-						</a>
-						
-						</div>
-					{{ endif }}
-				{{ /pages:next }}
-			{{ endif }}
-		</div>
-	</div>
-	<div class="four columns sidebar" role="complementary">
-		{{ theme:partial src="sub-navigation" }}		
-		{{ theme:partial src="common-sidebar" }}
-	</div>
-</div>
