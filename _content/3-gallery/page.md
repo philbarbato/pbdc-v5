@@ -1,8 +1,8 @@
 ---
 title: Gallery
-_template: page
-_fieldset: kitchen_sink
+_template: gallery_index
+_default_folder_template: gallery_entry
+_fieldset: page
 ---
-Etsy Shop Link
 
-other stuffs
+Here are all the monsters we make.

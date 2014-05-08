@@ -1,0 +1,30 @@
+type: number
+
+fields:
+  gallery:
+    display: Image Gallery
+    type: grid
+    starting_rows: 1
+    min_rows: 1
+    fields:
+      title:
+        display: Image Title
+        type: text
+        width: 50%
+      img:
+        display: Image
+        type: file
+        allowed: [png, gif, jpg, jpeg]
+        destination: assets/img/gallery # make sure your folder is writeable
+
+  content:
+    type: markitup
+
+  size:
+    display: Size
+    type: select
+    options:
+      tiny: Tiny
+      baby: Baby
+      little: Little
+	

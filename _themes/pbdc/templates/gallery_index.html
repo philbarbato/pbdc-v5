@@ -1,0 +1,7 @@
+<h1>{{ title|smartypants|widont }}</h1>
+
+{{ content|widont }}
+
+{{ entries:listing }}
+	<p><a href="{{ url }}">{{ title }}</a></p>
+{{ /entries:listing }}
